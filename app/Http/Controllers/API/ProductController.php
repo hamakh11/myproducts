@@ -23,7 +23,10 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'desc' => 'required|string',
-            'price' => 'required|int'
+            'price' => 'required|int',
+            'manufacturer' => 'required|string',
+            'about' => 'required|string',
+            'image_url' => 'sometimes'
         ]);
 
         if ($validator->fails()) {
@@ -51,7 +54,10 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'sometimes|string',
             'desc' => 'sometimes|string',
-            'price' => 'sometimes|int'
+            'price' => 'sometimes|int',
+            'manufacturer' => 'sometimes|string',
+            'about' => 'sometimes|string',
+            'image_url' => 'sometimes'
         ]);
 
         if ($validator->fails()) {
